@@ -15,10 +15,8 @@
 #   Select the exons signaled by the exonerate analysis and add them in a separate file in gff format
     exonerate -m p2g --showtargetgff -q drosophilasimulans.fa -t contig_24.fa -S F | egrep -w exon > exonerate_exons.gff
 #   Convert the previous file into a fasta file. 
-#   Beware: NECESARY THE USE OF BEDTOOLS, MAKE SURE BEDTOOLS ARE INSTALLED PREVOUSLY
+#   	Beware: NECESARY THE USE OF BEDTOOLS, MAKE SURE BEDTOOLS ARE INSTALLED PREVOUSLY
     bedtools getfasta -fi contig_24.fa -bed exonerate_exons.gff>exonerate_exons.fa
-#   Error: index file contig_24.fa.fai not found, generating… Had to create the file contig_24.fa.fai to continue with the process. I don’t know why. Then the command did work then.
-#   Solution: installing SAMtools should avoid error and the need to create .fa.fai file.
-
+#   	Error: index file contig_24.fa.fai not found, generating… We had to create the file contig_24.fa.fai to continue with the process. However we found that installing SAMtools extension is a way to avoif the error.
 #   Join all exons into a single sequence, and storing it in a fasta file.
 	  sed -e '2,$s/>.*//' exonerate_exons.fa | grep -v '^$' > exonerate_singleLine.fa
