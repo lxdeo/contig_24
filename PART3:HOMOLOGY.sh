@@ -22,5 +22,3 @@
 
 #   Join all exons into a single sequence, and storing it in a fasta file.
 	  sed -e '2,$s/>.*//' exonerate_exons.fa | grep -v '^$' > exonerate_singleLine.fa
-
-
