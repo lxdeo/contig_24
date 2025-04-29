@@ -6,4 +6,5 @@
       $geneid -P /soft/GeneID/geneid_1.2/dros.param -D /tmp/WebFiles/fastas/geneid18918.fasta
 #  2. FGENESH: using the drosophila organism model selection on the website. As before we also obtain the DNA coding sequence and protein aa sequence. We also save them in fasta files.
 #     Command used on the local bash terminal:
+#     Beware: the command used only works on the paid local extension of Softberry, as an alternative using and downloading the fasta file from the website is possible.
       $fgenesh contig24.fa -species=drosophila > FGENESH_contig24.fa
