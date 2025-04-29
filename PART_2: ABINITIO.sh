@@ -1,7 +1,7 @@
 #**Ab Intio method**
 
-#Ab Initio could be made with 2 websites, genescan and fgenesh:
-#  1. Genescan: the commands used to obtain the coding and protein sequences. The coding sequences is all the parts of the original sequence that codes for a protein. The protein sequence is the aminoacid chain that codes said protein.
+#Ab Initio could be made with 2 websites, geneid and fgenesh:
+#  1. GeneId: the commands used to obtain the coding and protein sequences. The coding sequences is all the parts of the original sequence that codes for a protein. The protein sequence is the aminoacid chain that codes said protein.
 #     Command used on the local bash terminal:
       $geneid -P /soft/GeneID/geneid_1.2/dros.param -D /tmp/WebFiles/fastas/geneid18918.fasta
 #  2. FGENESH: using the drosophila organism model selection on the website. As before we also obtain the DNA coding sequence and protein aa sequence. We also save them in fasta files.
