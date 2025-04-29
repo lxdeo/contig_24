@@ -8,10 +8,10 @@
 #   Download: download in fasta file (the complete seq.), rename it drosophilasimulans.fa .
 
 # Step 2: Using terminal (alignments)
-#	  Analysis: shows the alignment of both organisms, shows them in depth, shown directly in the terminal. Command use :
-    exonerate -m p2g --showtargetgff -q drosophilasimulans.fa -t contig_24.fa
-#   Additionaly, in the exonerate command it is possible to get a more trustworthy alignment, by removing the use of soft-masking, which avoids complex areas, for example, lower-case parts of the sequence. -S relates to soft-masking, F stands for False, for soft-masking not to be done. Therefore it is an even more complete analysis of exonerate:
-    exonerate -m p2g --showtargetgff -q drosophilasimulans.fa -t contig_24.fa -S F
+#   Analysis: shows the alignment of both organisms, shows them in depth, shown directly in the terminal. We save the analysis in a text file. Command use :
+    exonerate -m p2g --showtargetgff -q drosophilasimulans.fa -t contig_24.fa > exonerate_1.txt
+#   Additionaly, in the exonerate command it is possible to get a more trustworthy alignment, by removing the use of soft-masking, which avoids complex areas, for example, lower-case parts of the sequence. -S relates to soft-masking, F stands for False, for soft-masking not to be done. We save the analysis in a text file Therefore it is an even more complete analysis of exonerate:
+    exonerate -m p2g --showtargetgff -q drosophilasimulans.fa -t contig_24.fa -S F > exonerate_2.txt
 #   Select the exons signaled by the exonerate analysis and add them in a separate file in gff format
     exonerate -m p2g --showtargetgff -q drosophilasimulans.fa -t contig_24.fa -S F | egrep -w exon > exonerate_exons.gff
 #   Convert the previous file into a fasta file. 
